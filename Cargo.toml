@@ -1,6 +1,6 @@
 [package]
 name = "jwt-claims"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2021"
 license = "MIT"
 description = "Structured version of the JWT Claims Set, as referenced at https://datatracker.ietf.org/doc/html/rfc7519#section-4."
@@ -16,6 +16,13 @@ serde_with = { version = "3.11", features = ["chrono_0_4"] }
 chrono = "0.4"
 subtle = "2.4"
 thiserror = "1.0"
+salvo = { version = "0.73", default-features = false, features = [
+    "oapi",
+], optional = true }
 
 [dev-dependencies]
 serde_json = "1.0"
+
+[features]
+default = []
+salvo = ["dep:salvo"]

@@ -27,6 +27,7 @@ pub enum ValidationError {
 //
 // See examples for how to use this with your own claim types.
 #[serde_as]
+#[cfg_attr(feature = "salvo", derive(salvo::prelude::ToSchema))]
 #[derive(Serialize, Deserialize, Debug, Clone, Default)]
 #[serde(default)]
 pub struct RegisteredClaims {
